@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
+import randomImage from "@/utils/randomImage";
 
 const ojuju = Ojuju({ subsets: ["latin"], weight: "800" });
 
@@ -27,7 +28,7 @@ const Home = () => {
           <HeaderText />
         </div>
         <img
-          src="/assets/giving-flowers.jpg"
+          src={randomImage()}
           alt="Giving flowers"
           className="w-full max-w-md"
         />
@@ -67,7 +68,7 @@ const Home = () => {
                 (ojuju.className,
                 "font-semibold w-full p-9 text-2xl border-[1px] flex items-center justify-center")
               }
-              variant={"secondary"}
+              variant={"ghost"}
             >
               Play ❣️
             </Button>
