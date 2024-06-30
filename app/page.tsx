@@ -5,7 +5,10 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import randomImage from "@/utils/randomImage";
 
-const ojuju = Ojuju({ subsets: ["latin"], weight: "800" });
+const ojuju = Ojuju({
+  subsets: ["latin"],
+  weight: "800",
+});
 
 const Home = () => {
   const HeaderText = () => {
@@ -66,7 +69,7 @@ const Home = () => {
             <Button
               className={
                 (ojuju.className,
-                "font-semibold w-full p-9 text-2xl border-[1px] flex items-center justify-center")
+                "font-semibold w-full p-9 text-[20px] border-[1px] flex items-center justify-center")
               }
               variant={"ghost"}
             >
