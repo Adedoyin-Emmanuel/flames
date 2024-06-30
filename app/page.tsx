@@ -1,27 +1,28 @@
-import { Ojuju } from "next/font/google";
-import { cn } from "@/lib/utils";
+"use client";
+
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import randomImage from "@/utils/randomImage";
+import React from "react";
+import HeaderText from "@/app/components/header-text";
 
-const ojuju = Ojuju({
-  subsets: ["latin"],
-  weight: "800",
-});
+const image = randomImage();
 
 const Home = () => {
-  const HeaderText = () => {
-    return (
-      <h1
-        className={cn(
-          ojuju.className,
-          "font-extrabold text-center md:text-[7rem] text-[5rem] gradient-text cursor-pointer"
-        )}
-      >
-        FLAMES
-      </h1>
-    );
+  const [formData, setFormData] = React.useState({
+    yourName: "",
+    crushName: "",
+  });
+
+  const handleInputChange = (e: React.FormEvent<HTMLFormElement> | any) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log("Form submitted:", formData);
   };
 
   return (
@@ -30,19 +31,15 @@ const Home = () => {
         <div className="md:hidden mb-5">
           <HeaderText />
         </div>
-        <img
-          src={randomImage()}
-          alt="Giving flowers"
-          className="w-full max-w-md"
-        />
+        <img src={image} alt="Giving flowers" className="w-full max-w-md" />
       </section>
 
       <section className="flex flex-col items-start md:justify-center md:p-2">
         <div className="md:block hidden mb-5">
           <HeaderText />
         </div>
-        <section className="w-full md:p-0 p-2">
-          <section className="w-full flex md:flex-row flex-col items-center gap-x-5 ">
+        <form className="w-full md:p-0 p-2" onSubmit={(e) => handleSubmit(e)}>
+          <section className="w-full flex md:flex-row flex-col items-center gap-x-5">
             <div className="w-full md:my-0 my-2">
               <Label htmlFor="yourName" className="text-base">
                 What's your name?
@@ -51,6 +48,8 @@ const Home = () => {
                 type="text"
                 placeholder="Enter your name"
                 className="p-8 my-2"
+                name="yoourName"
+                onChange={handleInputChange}
               />
             </div>
             <div className="w-full md:my-0 my-2">
@@ -61,6 +60,8 @@ const Home = () => {
                 type="text"
                 placeholder="Enter your crush's name"
                 className="p-8 my-2"
+                name="crushName"
+                onChange={handleInputChange}
               />
             </div>
           </section>
@@ -68,15 +69,14 @@ const Home = () => {
           <div className="w-full my-5">
             <Button
               className={
-                (ojuju.className,
-                "font-semibold w-full p-9 text-[20px] border-[1px] flex items-center justify-center")
+                "font-semibold w-full p-9 text-[20px] border-[1px] flex items-center justify-center"
               }
               variant={"ghost"}
             >
               Play ❣️
             </Button>
           </div>
-        </section>
+        </form>
       </section>
     </section>
   );
