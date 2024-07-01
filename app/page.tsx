@@ -134,10 +134,7 @@ const Home = () => {
                 Star on Github
               </Link>
 
-              <Link
-                className="block underline my-3"
-                href={"https://github.com/adedoyin-emmanuel/flames"}
-              >
+              <Link className="block underline my-3" href={"/how-it-works"}>
                 How it works
               </Link>
             </div>
