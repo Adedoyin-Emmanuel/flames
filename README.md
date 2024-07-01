@@ -1,4 +1,6 @@
-# Flames 🚀
+# Flames 🎖️
+
+<https://flames.brimble.app>
 
 FLAMES is a playful game that forecasts the nature of a relationship
 between two people based on their names. If you're not familiar with
@@ -252,6 +254,10 @@ After creating the utility function,we can return the response and then use the 
 ```
 
 You can go through how I rendered the response to the user. That will be all. Thanks for reading this far. Please consider starring this repo. Your contributions are highly welcome.
+
+## Un-Official 🎖️
+
+I deployed this project on brimble. Brimble is a platform that allows you to deploy and scale modern JavaScript applications. They are shipping awesome stuffs and you should totally check them out <https://brimble.io/>
 
 ## Inspiration 🧠
 
