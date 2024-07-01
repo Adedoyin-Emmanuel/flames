@@ -49,6 +49,7 @@ export const calculateFlames = (formData: formDataProps) => {
       "Na just friend vibes we dey catch 🎉",
       "You be my gist partner 📚",
       "Na you I dey call when gist full ground 🤣",
+      "Nothing for you 😵",
     ],
     L: [
       "You dey chop love ❤️",

@@ -37,7 +37,7 @@ const Home = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!formData.crushName || formData.yourName) {
+    if (!formData.crushName || !formData.yourName) {
       toast({
         title: "Oh sugar 😞!",
         description: "Please fill in both names",
