@@ -7,17 +7,10 @@ import randomImage from "@/utils/randomImage";
 import { cn } from "@/lib/utils";
 import React from "react";
 import HeaderText from "@/app/components/header-text";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { calculateFlames } from "@/app/core/flames";
 import { Ojuju } from "next/font/google";
+import Link from "next/link";
 
 const image = randomImage();
 const ojuju = Ojuju({
@@ -124,6 +117,21 @@ const Home = () => {
             >
               Play ❣️
             </Button>
+            <div className="flex gap-x-4">
+              <Link
+                className="block underline my-3"
+                href={"https://github.com/adedoyin-emmanuel/flames"}
+              >
+                Star on Github
+              </Link>
+
+              <Link
+                className="block underline my-3"
+                href={"https://github.com/adedoyin-emmanuel/flames"}
+              >
+                How it works
+              </Link>
+            </div>
           </div>
         </form>
       </section>
