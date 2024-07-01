@@ -22,7 +22,7 @@ import { Ojuju } from "next/font/google";
 const image = randomImage();
 const ojuju = Ojuju({
   subsets: ["latin"],
-  weight: "600",
+  weight: "700",
 });
 
 const Home = () => {
@@ -46,18 +46,22 @@ const Home = () => {
 
     setShowModal(true);
     setModalContent(
-      <section className="w-full p-1 flex flex-col items-center justify-around gap-5">
-        <h1 className={cn(ojuju.className, "text-5xl font-bold  capitalize")}>
+      <section className="w-full p-1 flex flex-col items-center justify-around gap-6 text-white">
+        <h1
+          className={cn(ojuju.className, "text-5xl font-extrabold capitalize")}
+        >
           {formData.yourName}
         </h1>
 
         <p className="text-2xl">&</p>
 
-        <h1 className={cn(ojuju.className, "text-5xl font-bold  capitalize")}>
+        <h1
+          className={cn(ojuju.className, "text-5xl font-extrabold  capitalize")}
+        >
           {formData.crushName}
         </h1>
 
-        <h1>{result.meaning}</h1>
+        <h1 className="text-2xl font-bold my-2">{result.meaning}</h1>
 
         <p>{result.response}</p>
       </section>
@@ -74,7 +78,7 @@ const Home = () => {
       </section>
 
       <Dialog open={showModal} onOpenChange={setShowModal}>
-        <DialogContent className="w-[95.666667%] h-1/2">
+        <DialogContent className="w-[95.666667%] md:w-full h-1/2">
           {modalContent}
         </DialogContent>
       </Dialog>

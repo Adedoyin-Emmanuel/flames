@@ -108,12 +108,16 @@
   animation: gradient 15s ease infinite;
 }
 
-.bg-ring {
+.custom-bg-ring {
   background-image: linear-gradient(
-      rgba(214, 53, 47, 0.3),
-      rgba(214, 53, 47, 0.3)
+      40deg,
+      rgba(255, 182, 193, 0),
+      rgba(138, 43, 226, 0.9)
     ),
-    url(./result-bg.jpg);
+    url(./../public/assets/ring-bg.jpg);
   background-size: cover;
-  background-position: center center;
+  background-position: center;
+  border: 0 !important;
+  border-radius: 3px;
+  overflow: hidden;
 }
