@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Bricolage_Grotesque } from "next/font/google";
 import "./globals.css";
+import { Toaster } from "@/components/ui/toaster";
 
 const bricolage = Bricolage_Grotesque({ subsets: ["latin"], weight: "300" });
 
@@ -17,7 +18,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={bricolage.className}>{children}</body>
+      <body className={bricolage.className}>
+        <Toaster />
+        {children}
+      </body>
     </html>
   );
 }

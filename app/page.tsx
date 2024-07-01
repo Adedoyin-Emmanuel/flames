@@ -11,6 +11,7 @@ import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { calculateFlames } from "@/app/core/flames";
 import { Ojuju } from "next/font/google";
 import Link from "next/link";
+import { useToast } from "@/components/ui/use-toast";
 
 const image = randomImage();
 const ojuju = Ojuju({
@@ -27,6 +28,7 @@ const Home = () => {
   const [modalContent, setModalContent] = React.useState<React.ReactNode>(
     <></>
   );
+  const { toast } = useToast();
 
   const handleInputChange = (e: React.FormEvent<HTMLFormElement> | any) => {
     const { name, value } = e.target;
@@ -35,6 +37,13 @@ const Home = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (!formData.crushName || formData.yourName) {
+      toast({
+        title: "Oh sugar 😞!",
+        description: "Please fill in both names",
+      });
+      return;
+    }
     const result = calculateFlames(formData);
 
     setShowModal(true);
