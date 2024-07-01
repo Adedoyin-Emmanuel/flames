@@ -107,3 +107,13 @@
   -webkit-text-fill-color: transparent;
   animation: gradient 15s ease infinite;
 }
+
+.bg-ring {
+  background-image: linear-gradient(
+      rgba(214, 53, 47, 0.3),
+      rgba(214, 53, 47, 0.3)
+    ),
+    url(./result-bg.jpg);
+  background-size: cover;
+  background-position: center center;
+}
